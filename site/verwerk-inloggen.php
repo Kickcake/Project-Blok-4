@@ -36,8 +36,8 @@ if ($isAdmin) {
     $_SESSION['admin'] = true;
     header("location: dashadmin.php");
     exit;
-} else {
-    $_SESSION['admin'] = false;
-    header("location: dash.php");
-    exit;
 }
+
+$_SESSION['admin'] = false;
+header("location: dash.php");
+exit;

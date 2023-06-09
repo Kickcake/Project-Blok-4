@@ -18,7 +18,7 @@ if (!empty($_POST['vnaamg'])) {
         $lastInsertId = mysqli_insert_id($conn);
         session_start();
         $_SESSION['user_id'] = $lastInsertId;
-        header("location: inloggen.php  ");
+        header("location: adres_toevoegen.php");
         exit;
     }
 }
