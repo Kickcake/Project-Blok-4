@@ -14,7 +14,7 @@ require 'database.php';
 
 <body>
     <main>
-        <div>
+        <div class="container">
             <div>
                 <h1>registreren</h1>
             </div>

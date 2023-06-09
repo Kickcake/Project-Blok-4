@@ -22,7 +22,7 @@ require 'database.php';
 
 <body>
     <main>
-        <div>
+        <div class="container">
             <div>
                 <h1>Nieuwe gebruiker maken</h1>
             </div>
@@ -38,7 +38,11 @@ require 'database.php';
                 <input type="text" name="anaamg" id="anaamg">
 
                 <label for="geslachtg">Geslacht</label>
-                <input type="text" name="geslachtg" id="geslachtg">
+                <select class="Iselect" name="geslachtg" id="geslachtg">
+                    <option value="man">Man</option>
+                    <option value="vrouw">Vrouw</option>
+                    <option value="anders">Anders</option>
+                </select>
 
                 <label for="mobielg">Mobielnummer</label>
                 <input type="text" name="mobielg" id="mobielg">

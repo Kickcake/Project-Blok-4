@@ -10,14 +10,15 @@ if (!empty($_POST['vnaamg'])) {
     $email = $_POST['emailg'];
     $GBnaam = $_POST['gbnaamg'];
     $paswoord = $_POST['paswoordg'];
+    $hashed_pass = password_hash($paswoord, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO Gebruiker (voornaam, tussenvoegsel, achternaam, geslacht, mobielnummer, email, gebruikersnaam, paswoord) 
-                            VALUES ('$Vnaam', '$tussen', '$Anaam', '$geslacht', '$mobiel', '$email', '$GBnaam', '$paswoord')";
+                            VALUES ('$Vnaam', '$tussen', '$Anaam', '$geslacht', '$mobiel', '$email', '$GBnaam', '$hashed_pass')";
     if (mysqli_query($conn, $sql)) {
         $lastInsertId = mysqli_insert_id($conn);
         session_start();
         $_SESSION['user_id'] = $lastInsertId;
-        header("location: adres_toevoegen.php");
+        header("location: inloggen.php");
         exit;
     }
 }

@@ -1,0 +1,185 @@
+bodyd {
+    background-image: linear-gradient(rgba(4, 9, 30, 0.137), rgba(4, 9, 30, 0.7)), url('recipe-by-dall-e.png');
+    background-position: center;
+    background-size: cover;
+    position: relative
+}
+
+html {
+    max-height: fit-content;
+    background-color: rgba(136, 219, 183, 0.231);
+}
+
+body {
+    max-height: fit-content;
+    margin: 0;
+}
+
+button {
+    background-color: rgb(179, 216, 255);
+    position: relative;
+    top: 3px;
+    width: 100px;
+    height: 44px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: rgb(179, 187, 255);
+}
+
+button:active {
+    background: rgb(179, 241, 255);
+}
+
+body {
+    font-family: arial, sans-serif;
+}
+
+main {
+    width: 100%;
+
+}
+
+div.container {
+    background: #87bcdb;
+    color: #113468;
+    width: 80vw;
+    max-width: 40rem;
+    margin: 60px auto 0px auto;
+    padding: 0px 20px;
+    padding-bottom: 3em;
+    height: fit-content;
+    max-height: 60em;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.head {
+    padding-top: 1em;
+    border-bottom: 1px solid black;
+}
+
+.head p {
+    font-size: 120%;
+}
+
+form {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+#new1 {
+    grid-template-rows: repeat(15, 1fr);
+
+}
+
+.newp form {
+    position: relative;
+    top: 1.2em;
+    display: grid;
+    width: fit-content;
+    left: 4em;
+    grid-template-columns: 0fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+
+.containerin form {
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 0fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.form textarea {
+    width: 32rem;
+    height: 10rem;
+    background-color: #dcefff;
+    border-radius: 2px;
+    border: 2px solid #8c9faa;
+}
+
+
+ul {
+    list-style: none;
+    margin: 20px 0px;
+    text-align: center;
+
+}
+
+li {
+    display: inline-block;
+    padding-right: 5px;
+}
+
+input {
+    background-color: #dcefff;
+    border-radius: 2px;
+    border: 2px solid #8c9faa;
+    text-align: center;
+    appearance: none;
+    padding: 10px 16px;
+    border: none;
+    margin-top: 6px;
+    font-size: 1.1rem;
+    max-height: 4vh;
+}
+
+.Iselect {
+    background-color: #dcefff;
+    border-radius: 2px;
+    border: 2px solid #8c9faa;
+    text-align: center;
+    appearance: none;
+    padding: 10px 16px;
+    border: none;
+    margin-top: 6px;
+    max-height: 4vh;
+    min-height: 2.6vh;
+}
+
+label {
+    padding-top: 2vh;
+    height: 2vh;
+    margin-bottom: 1vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    color: #113468;
+    text-transform: uppercase;
+}
+
+.form p {
+    margin-bottom: 0%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+    color: #80543c;
+}
+
+input:focus {
+    background-color: rgb(253, 247, 244);
+}
+
+.formbutton {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+}
+
+@media screen and (max-width:1128px) {
+    .products {
+        max-width: 53em;
+    }
+}
