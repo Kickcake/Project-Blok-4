@@ -1,6 +1,8 @@
 <?php
 require 'database.php';
 
+session_start();
+
 if (!empty($_POST['postcodea'])) {
     $userId = $_SESSION['user_id'];
 

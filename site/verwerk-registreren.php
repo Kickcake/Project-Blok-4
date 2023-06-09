@@ -14,6 +14,10 @@ if (!empty($_POST['vnaamg'])) {
     $sql = "INSERT INTO Gebruiker (voornaam, tussenvoegsel, achternaam, geslacht, mobielnummer, email, gebruikersnaam, paswoord) 
                             VALUES ('$Vnaam', '$tussen', '$Anaam', '$geslacht', '$mobiel', '$email', '$GBnaam', '$paswoord')";
     if (mysqli_query($conn, $sql)) {
+        $lastInsertId = mysqli_insert_id($conn);
+        session_start();
+        $_SESSION['user_id'] = $lastInsertId;
         header("location: adres_toevoegen.php");
-    };
+        exit;
+    }
 }
