@@ -1,10 +1,3 @@
-bodyd {
-    background-image: linear-gradient(rgba(4, 9, 30, 0.137), rgba(4, 9, 30, 0.7)), url('recipe-by-dall-e.png');
-    background-position: center;
-    background-size: cover;
-    position: relative
-}
-
 html {
     max-height: fit-content;
     background-color: rgba(136, 219, 183, 0.231);

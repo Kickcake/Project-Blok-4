@@ -56,7 +56,14 @@ require 'database.php';
                 <label for="paswoordg">Paswoord</label>
                 <input type="text" name="paswoordg" id="paswoordg">
 
-                <button class="formbutton" type="submit">Nieuwe gebruiker maken!</button>
+                <label for="rolg">Rol</label>
+                <select class="Iselect" name="rolg" id="rolg">
+                    <option value="administrator">administrator</option>
+                    <option value="manager">manager</option>
+                    <option value="regular">regular</option>
+                </select>
+
+                <button class="formbutton" type="submit">Aanmaken!</button>
             </form>
         </div>
     </main>

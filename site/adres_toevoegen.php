@@ -14,7 +14,7 @@ require 'database.php';
 
 <body>
     <main>
-        <div>
+        <div class="container">
             <div>
                 <h1>adres toevoegen</h1>
             </div>
@@ -44,7 +44,7 @@ require 'database.php';
                 <label for="notitiea">notitie</label>
                 <input type="text" name="notitiea" id="notitiea">
 
-                <button class="formbutton" type="submit">Je adres toevoegen!</button>
+                <button class="formbutton" type="submit">Toevoegen!</button>
             </form>
         </div>
     </main>
