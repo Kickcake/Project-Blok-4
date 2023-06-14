@@ -23,4 +23,6 @@ if (!empty($_POST['postcodea'])) {
 
     $Gsql = "UPDATE Gebruiker SET adres_id = '$last_id' WHERE id = '$userId'";
     mysqli_query($conn, $Gsql);
+
+    header("location: nieuwe-gebruiker.php");
 }
