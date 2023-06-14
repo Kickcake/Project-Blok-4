@@ -3,9 +3,9 @@ require 'database.php';
 session_start();
 
 if (!isset($_SESSION['SignedIn'])) {
-    header("location: sign-in.php");
+    header("location: inloggen.php");
 }
-if (!isset($_SESSION['admin'])) {
+if ($_SESSION['admin'] == false) {
     header("location: dash.php");
 }
 ?>

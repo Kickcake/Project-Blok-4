@@ -11,10 +11,11 @@ body {
 button {
     background-color: rgb(179, 216, 255);
     position: relative;
-    top: 3px;
-    width: 100px;
-    height: 44px;
-    border-radius: 5px;
+    top: 2px;
+    width: 80px;
+    height: 35px;
+    border-radius: 4px;
+    font-size: 0.9rem;
 }
 
 button:hover {
@@ -37,24 +38,15 @@ main {
 div.container {
     background: #87bcdb;
     color: #113468;
-    width: 80vw;
-    max-width: 40rem;
-    margin: 60px auto 0px auto;
-    padding: 0px 20px;
-    padding-bottom: 3em;
+    width: 64vw;
+    max-width: 32rem;
+    margin: 48px auto 0px auto;
+    padding: 0px 16px;
+    padding-bottom: 2.4em;
     height: fit-content;
-    max-height: 60em;
+    max-height: 48em;
     text-align: center;
-    border-radius: 10px;
-}
-
-.head {
-    padding-top: 1em;
-    border-bottom: 1px solid black;
-}
-
-.head p {
-    font-size: 120%;
+    border-radius: 8px;
 }
 
 form {
@@ -67,24 +59,6 @@ form {
     grid-row-gap: 0px;
 }
 
-#new1 {
-    grid-template-rows: repeat(15, 1fr);
-
-}
-
-.newp form {
-    position: relative;
-    top: 1.2em;
-    display: grid;
-    width: fit-content;
-    left: 4em;
-    grid-template-columns: 0fr;
-    grid-template-rows: repeat(7, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-}
-
-
 .containerin form {
     position: relative;
 
@@ -96,59 +70,60 @@ form {
 }
 
 .form textarea {
-    width: 32rem;
-    height: 10rem;
+    width: 25.6rem;
+    height: 8rem;
     background-color: #dcefff;
-    border-radius: 2px;
-    border: 2px solid #8c9faa;
+    border-radius: 1.6px;
+    border: 1.6px solid #8c9faa;
+    font-size: 0.9rem;
 }
-
 
 ul {
     list-style: none;
-    margin: 20px 0px;
+    margin: 16px 0px;
     text-align: center;
-
 }
 
 li {
     display: inline-block;
-    padding-right: 5px;
+    padding-right: 4px;
 }
 
 input {
     background-color: #dcefff;
-    border-radius: 2px;
-    border: 2px solid #8c9faa;
+    border-radius: 1.6px;
+    border: 1.6px solid #8c9faa;
     text-align: center;
     appearance: none;
-    padding: 10px 16px;
+    padding: 8px 12.8px;
     border: none;
-    margin-top: 6px;
-    font-size: 1.1rem;
-    max-height: 4vh;
+    margin-top: 4px;
+    font-size: 0.88rem;
+    max-height: 3.2vh;
 }
 
 .Iselect {
     background-color: #dcefff;
-    border-radius: 2px;
-    border: 2px solid #8c9faa;
+    border-radius: 1.6px;
+    border: 1.6px solid #8c9faa;
     text-align: center;
     appearance: none;
-    padding: 10px 16px;
+    padding: 8px 12.8px;
     border: none;
-    margin-top: 6px;
-    max-height: 4vh;
-    min-height: 2.6vh;
+    margin-top: 4px;
+    max-height: 5.6vh;
+    min-height: 2.08vh;
+    font-size: 0.88rem;
 }
 
+
 label {
-    padding-top: 2vh;
-    height: 2vh;
-    margin-bottom: 1vh;
+    padding-top: 1.6vh;
+    height: 1.6vh;
+    margin-bottom: 0.8vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    font-size: 0.9em;
+    font-size: 0.72em;
     color: #113468;
     text-transform: uppercase;
 }
@@ -156,7 +131,7 @@ label {
 .form p {
     margin-bottom: 0%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.8em;
+    font-size: 0.64em;
     color: #80543c;
 }
 
@@ -168,11 +143,11 @@ input:focus {
     position: relative;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -10%);
+    transform: translate(-50%, -8%);
 }
 
-@media screen and (max-width:1128px) {
+@media screen and (max-width: 902px) {
     .products {
-        max-width: 53em;
+        max-width: 42.4em;
     }
 }

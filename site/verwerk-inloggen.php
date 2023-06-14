@@ -28,11 +28,9 @@ $_SESSION['SignedIn'] = true;
 $_SESSION['sname'] = $user['voornaam'];
 $_SESSION['user_id'] = $user['id'];
 
-$sql = "SELECT id FROM administrator WHERE id = " . $user['id'];
-$result = mysqli_query($conn, $sql);
-$isAdmin = mysqli_num_rows($result) > 0;
+$isAdmin = $user['rol'];
 
-if ($isAdmin) {
+if ($isAdmin === 'administrator') {
     $_SESSION['admin'] = true;
     header("location: dashadmin.php");
     exit;

@@ -1,14 +1,3 @@
-<?php
-require 'database.php';
-//session_start();
-//
-//if (!isset($_SESSION['SignedIn'])) {
-//    header("location: Sign-in.php");
-//}
-//if (!isset($_SESSION['admin'])) {
-//    header("location: Sign-in.php");
-//}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,10 +46,23 @@ require 'database.php';
                 <input type="text" name="paswoordg" id="paswoordg">
 
                 <label for="rolg">Rol</label>
-                <select class="Iselect" name="rolg" id="rolg">
-                    <option value="administrator">administrator</option>
-                    <option value="manager">manager</option>
+                <select class="Iselect" name="rolg" id="rolg" onchange="toggleAfdelingAndInDienst()">
                     <option value="regular">regular</option>
+                    <option value="manager">manager</option>
+                    <option value="administrator">administrator</option>
+                </select>
+
+                <label for="afdeling" id="afdelingLabel" style="display: none;">Afdeling</label>
+                <select class="Iselect" name="afdeling" id="afdeling" style="display: none;">
+                    <option value="option1">boekhouding</option>
+                    <option value="option2">database</option>
+                    <option value="option3">front-end</option>
+                </select>
+
+                <label for="inDienst" id="inDienstLabel" style="display: none;">In Dienst</label>
+                <select class="Iselect" name="inDienst" id="inDienst" style="display: none;">
+                    <option value="optionA">True</option>
+                    <option value="optionB">False</option>
                 </select>
 
                 <button class="formbutton" type="submit">Aanmaken!</button>
@@ -68,6 +70,31 @@ require 'database.php';
         </div>
     </main>
 
+    <script>
+        function toggleAfdelingAndInDienst() {
+            var rolSelect = document.getElementById("rolg");
+            var afdelingLabel = document.getElementById("afdelingLabel");
+            var afdelingSelect = document.getElementById("afdeling");
+            var inDienstLabel = document.getElementById("inDienstLabel");
+            var inDienstSelect = document.getElementById("inDienst");
+
+            if (rolSelect.value === "manager") {
+                afdelingLabel.style.display = "block";
+                afdelingSelect.style.display = "block";
+            } else {
+                afdelingLabel.style.display = "none";
+                afdelingSelect.style.display = "none";
+            }
+
+            if (rolSelect.value === "administrator") {
+                inDienstLabel.style.display = "block";
+                inDienstSelect.style.display = "block";
+            } else {
+                inDienstLabel.style.display = "none";
+                inDienstSelect.style.display = "none";
+            }
+        }
+    </script>
 </body>
 
 </html>

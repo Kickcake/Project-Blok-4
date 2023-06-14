@@ -19,16 +19,18 @@ if (!empty($_POST['vnaamg'])) {
 
     $lastInsertId = mysqli_insert_id($conn);
 
-    if ($rol == 'administrator') {
-        $roleTable = 'administrator';
-    } elseif ($rol == 'manager') {
-        $roleTable = 'manager';
-    } else {
-        $roleTable = 'regular';
+    if ($rol === 'administrator') {
+        $in_dienst = $_POST['dienstg'];
+        $adminSql = "INSERT INTO administrator (id, in_dienst) VALUES ('$lastInsertId', '$in_dienst')";
+        mysqli_query($conn, $adminSql);
+    } elseif ($rol === 'manager') {
+        $afdeling = $_POST['afdelingg'];
+        $managerSql = "INSERT INTO manager (id, afdeling) VALUES ('$lastInsertId', '$afdeling')";
+        mysqli_query($conn, $managerSql);
+    } elseif ($rol === 'regular') {
+        $regularSql = "INSERT INTO regular (id, per_wanneer) VALUES ('$lastInsertId', CURDATE())";
+        mysqli_query($conn, $regularSql);
     }
-
-    $roleSql = "INSERT INTO $roleTable (id) VALUES ('$lastInsertId')";
-    mysqli_query($conn, $roleSql);
 
     session_start();
     $_SESSION['user_id'] = $lastInsertId;
