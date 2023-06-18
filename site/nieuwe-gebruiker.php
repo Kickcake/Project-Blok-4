@@ -52,49 +52,25 @@
                     <option value="administrator">administrator</option>
                 </select>
 
-                <label for="afdeling" id="afdelingLabel" style="display: none;">Afdeling</label>
-                <select class="Iselect" name="afdeling" id="afdeling" style="display: none;">
+                <label for="afdeling" class="afdelingElement" style="display: none;">Afdeling</label>
+                <select class="Iselect afdelingElement" name="afdeling" id="afdeling" style="display: none;">
                     <option value="option1">boekhouding</option>
                     <option value="option2">database</option>
                     <option value="option3">front-end</option>
                 </select>
 
-                <label for="inDienst" id="inDienstLabel" style="display: none;">In Dienst</label>
-                <select class="Iselect" name="inDienst" id="inDienst" style="display: none;">
+                <label for="inDienst" class="inDienstElement" style="display: none;">In Dienst</label>
+                <select class="Iselect inDienstElement" name="inDienst" id="inDienst" style="display: none;">
                     <option value="optionA">True</option>
                     <option value="optionB">False</option>
                 </select>
 
-                <button class="formbutton" type="submit">Aanmaken!</button>
+                <button class="formbutton" type="submit">Aanmaken</button>
             </form>
         </div>
     </main>
 
-    <script>
-        function toggleAfdelingAndInDienst() {
-            var rolSelect = document.getElementById("rolg");
-            var afdelingLabel = document.getElementById("afdelingLabel");
-            var afdelingSelect = document.getElementById("afdeling");
-            var inDienstLabel = document.getElementById("inDienstLabel");
-            var inDienstSelect = document.getElementById("inDienst");
-
-            if (rolSelect.value === "manager") {
-                afdelingLabel.style.display = "block";
-                afdelingSelect.style.display = "block";
-            } else {
-                afdelingLabel.style.display = "none";
-                afdelingSelect.style.display = "none";
-            }
-
-            if (rolSelect.value === "administrator") {
-                inDienstLabel.style.display = "block";
-                inDienstSelect.style.display = "block";
-            } else {
-                inDienstLabel.style.display = "none";
-                inDienstSelect.style.display = "none";
-            }
-        }
-    </script>
+    <script src="rolscript.js"></script>
 </body>
 
 </html>

@@ -20,11 +20,11 @@ if (!empty($_POST['vnaamg'])) {
     $lastInsertId = mysqli_insert_id($conn);
 
     if ($rol === 'administrator') {
-        $in_dienst = $_POST['dienstg'];
+        $in_dienst = $_POST['inDienst'];
         $adminSql = "INSERT INTO administrator (id, in_dienst) VALUES ('$lastInsertId', '$in_dienst')";
         mysqli_query($conn, $adminSql);
     } elseif ($rol === 'manager') {
-        $afdeling = $_POST['afdelingg'];
+        $afdeling = $_POST['afdeling'];
         $managerSql = "INSERT INTO manager (id, afdeling) VALUES ('$lastInsertId', '$afdeling')";
         mysqli_query($conn, $managerSql);
     } elseif ($rol === 'regular') {
