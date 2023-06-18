@@ -1,3 +1,14 @@
+<?php
+require 'database.php';
+session_start();
+
+if (!isset($_SESSION['SignedIn'])) {
+    header("location: inloggen.php");
+}
+if ($_SESSION['admin'] == false) {
+    header("location: dash.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,22 +65,21 @@
 
                 <label for="afdeling" class="afdelingElement" style="display: none;">Afdeling</label>
                 <select class="Iselect afdelingElement" name="afdeling" id="afdeling" style="display: none;">
-                    <option value="option1">boekhouding</option>
-                    <option value="option2">database</option>
-                    <option value="option3">front-end</option>
+                    <option value="boekhouding">boekhouding</option>
+                    <option value="database">database</option>
+                    <option value="front-end">front-end</option>
                 </select>
 
                 <label for="inDienst" class="inDienstElement" style="display: none;">In Dienst</label>
                 <select class="Iselect inDienstElement" name="inDienst" id="inDienst" style="display: none;">
-                    <option value="optionA">True</option>
-                    <option value="optionB">False</option>
+                    <option value="1">True</option>
+                    <option value="0">False</option>
                 </select>
 
                 <button class="formbutton" type="submit">Aanmaken</button>
             </form>
         </div>
     </main>
-
     <script src="rolscript.js"></script>
 </body>
 
