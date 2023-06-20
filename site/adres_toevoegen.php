@@ -38,13 +38,13 @@ require 'database.php';
                 <label for="omschrijvinga">omschrijving</label>
                 <input type="text" name="omschrijvinga" id="omschrijvinga">
 
-                <label for="telefoonNa">teledoonnummer</label>
+                <label for="telefoonNa">telefoonnummer</label>
                 <input type="text" name="telefoonNa" id="telefoonNa">
 
                 <label for="notitiea">notitie</label>
                 <input type="text" name="notitiea" id="notitiea">
 
-                <button class="formbutton" type="submit">Toevoegen!</button>
+                <button class="formbutton" type="submit">Toevoegen</button>
             </form>
         </div>
     </main>

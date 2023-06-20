@@ -30,7 +30,11 @@ require 'database.php';
                 <input type="text" name="anaamg" id="anaamg">
 
                 <label for="geslachtg">Geslacht</label>
-                <input type="text" name="geslachtg" id="geslachtg">
+                <select class="Iselect" name="geslachtg" id="geslachtg">
+                    <option value="man">Man</option>
+                    <option value="vrouw">Vrouw</option>
+                    <option value="anders">Anders</option>
+                </select>
 
                 <label for="mobielg">Mobielnummer</label>
                 <input type="text" name="mobielg" id="mobielg">
@@ -44,7 +48,7 @@ require 'database.php';
                 <label for="paswoordg">Paswoord</label>
                 <input type="text" name="paswoordg" id="paswoordg">
 
-                <button class="formbutton" type="submit">Nieuwe gebruiker maken!</button>
+                <button class="formbutton" type="submit">registreren</button>
             </form>
         </div>
     </main>

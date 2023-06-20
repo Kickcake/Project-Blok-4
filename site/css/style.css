@@ -1,3 +1,5 @@
+/* Additional CSS styles */
+
 html {
     max-height: fit-content;
     background-color: rgba(136, 219, 183, 0.231);
@@ -32,7 +34,6 @@ body {
 
 main {
     width: 100%;
-
 }
 
 div.container {
@@ -51,7 +52,6 @@ div.container {
 
 form {
     position: relative;
-
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(7, 1fr);
@@ -61,7 +61,6 @@ form {
 
 .containerin form {
     position: relative;
-
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 0fr);
@@ -115,7 +114,6 @@ input {
     min-height: 2.08vh;
     font-size: 0.88rem;
 }
-
 
 label {
     padding-top: 1.6vh;

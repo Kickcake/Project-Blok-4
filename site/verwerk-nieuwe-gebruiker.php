@@ -1,7 +1,7 @@
 <?php
 require 'database.php';
 
-session_start(); // Move session_start() to the beginning
+session_start();
 
 if (!empty($_POST['vnaamg'])) {
     $Vnaam = $_POST['vnaamg'];
@@ -27,24 +27,20 @@ if (!empty($_POST['vnaamg'])) {
         } elseif ($rol === 'manager') {
             $afdeling = $_POST['afdeling'];
 
-            // Check if the afdeling already exists in the manager table
             $existingManagerSql = "SELECT id FROM manager WHERE afdeling = '$afdeling'";
             $existingManagerResult = mysqli_query($conn, $existingManagerSql);
 
             if (mysqli_num_rows($existingManagerResult) > 0) {
-                // Update the existing manager entry
                 $existingManagerRow = mysqli_fetch_assoc($existingManagerResult);
                 $existingManagerId = $existingManagerRow['id'];
 
                 $managerSql = "UPDATE manager SET id = '$lastInsertId' WHERE id = '$existingManagerId'";
                 mysqli_query($conn, $managerSql);
             } else {
-                // Insert a new manager entry
                 $managerSql = "INSERT INTO manager (id, afdeling) VALUES ('$lastInsertId', '$afdeling')";
                 mysqli_query($conn, $managerSql);
             }
 
-            // Update the aantal_mensen count
             $countQuery = "SELECT COUNT(*) AS total_managers FROM manager WHERE afdeling = '$afdeling'";
             $countResult = mysqli_query($conn, $countQuery);
             $countRow = mysqli_fetch_assoc($countResult);
