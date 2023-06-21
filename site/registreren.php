@@ -1,6 +1,7 @@
 <?php
 require 'database.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +11,18 @@ require 'database.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gebruiker-toevoegen</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function validateForm() {
+            var inputs = document.getElementById("nieuwe-gebruiker").getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].value === "") {
+                    alert("Please fill in all fields.");
+                    return false;
+                }
+            }
+            return confirm("Are you sure you want to submit this form?");
+        }
+    </script>
 </head>
 
 <body>
@@ -18,7 +31,11 @@ require 'database.php';
             <div>
                 <h1>registreren</h1>
             </div>
-            <form id="nieuwe-gebruiker" class="form" action="verwerk-registreren.php" method="post">
+            <form id="nieuwe-gebruiker" class="form" action="verwerk-registreren.php" method="post" onsubmit="return validateForm();">
+
+                <?php if (isset($error_message)) : ?>
+                    <p class="error"><?php echo $error_message; ?></p>
+                <?php endif; ?>
 
                 <label for="vnaamg">Voornaam</label>
                 <input type="text" name="vnaamg" id="vnaamg">
@@ -50,9 +67,12 @@ require 'database.php';
 
                 <button class="formbutton" type="submit">registreren</button>
             </form>
+            <div class="login-button">
+                <h3>Al een account?</h3>
+                <a href="inloggen.php"><button class="login-button">Inloggen</button></a>
+            </div>
         </div>
     </main>
-
 </body>
 
 </html>

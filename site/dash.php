@@ -2,11 +2,15 @@
 require 'database.php';
 session_start();
 
+
 if (!isset($_SESSION['SignedIn'])) {
     header("location: inloggen.php");
 }
 if ($_SESSION['admin']) {
     header("location: dashadmin.php");
+}
+if ($_SESSION['manager']) {
+    header("location: dashmanager.php");
 }
 ?>
 <!DOCTYPE html>
@@ -21,9 +25,18 @@ if ($_SESSION['admin']) {
 </head>
 
 <body>
-    <h1>yo cool je ben ingelogt denk ik</h1>
-    <p>je naam is <?php echo $_SESSION['sname'] ?></p>
-    <div>
+    <?php if ($_SESSION['admin'] == true) {
+        include 'compents/dash/headeradmin.php';
+    } elseif ($_SESSION['manager'] == true) {
+        include 'compents/dash/headermanager.php';
+    } else {
+        include 'compents/dash/header.php';
+    } ?>
+    <div class="content">
+
+        <h1>Je bent ingelogd</h1>
+        <p>je naam is <?php echo $_SESSION['sname'] ?></p>
+
         <a href="logout.php"> log out</a>
     </div>
 </body>

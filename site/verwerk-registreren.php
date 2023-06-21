@@ -23,7 +23,7 @@ if (!empty($_POST['vnaamg'])) {
         mysqli_query($conn, $regularSql);
 
         $_SESSION['user_id'] = $lastInsertId;
-        header("location: adres_toevoegen.php");
+        header("location: dash.php");
         exit;
     } else {
         $error = mysqli_error($conn);

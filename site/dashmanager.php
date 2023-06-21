@@ -5,7 +5,10 @@ session_start();
 if (!isset($_SESSION['SignedIn'])) {
     header("location: inloggen.php");
 }
-if ($_SESSION['admin'] == false) {
+if ($_SESSION['admin'] == true) {
+    header("location: dashadmin.php");
+}
+if ($_SESSION['manager'] == false) {
     header("location: dash.php");
 }
 ?>
@@ -30,7 +33,7 @@ if ($_SESSION['admin'] == false) {
     } ?>
 
     <div class="content">
-        <h1>Je bent ingelogd op een admin account</h1>
+        <h1>Je bent ingelogd op een Manager account</h1>
         <p>je naam is <?php echo $_SESSION['sname'] ?></p>
         <div>
             <a href="logout.php">log out</a>

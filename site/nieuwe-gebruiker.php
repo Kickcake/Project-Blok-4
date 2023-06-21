@@ -9,6 +9,7 @@ if ($_SESSION['admin'] == false) {
     header("location: dash.php");
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,15 +19,38 @@ if ($_SESSION['admin'] == false) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gebruiker-toevoegen</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function validateForm() {
+            var inputs = document.getElementById("nieuwe-gebruiker").getElementsByTagName("input");
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].value === "") {
+                    alert("Please fill in all fields.");
+                    return false;
+                }
+            }
+            return confirm("Are you sure you want to submit this form?");
+        }
+    </script>
 </head>
 
 <body>
+    <?php if ($_SESSION['admin'] == true) {
+        include 'compents/headeradmin.php';
+    } elseif ($_SESSION['manager'] == true) {
+        include 'compents/headermanager.php';
+    } else {
+        include 'compents/header.php';
+    } ?>
+
     <main>
         <div class="container">
             <div>
                 <h1>Nieuwe gebruiker maken</h1>
             </div>
-            <form id="nieuwe-gebruiker" class="form" action="verwerk-nieuwe-gebruiker.php" method="post">
+            <?php if (isset($error_message)) : ?>
+                <div class="error"><?php echo $error_message; ?></div>
+            <?php endif; ?>
+            <form id="nieuwe-gebruiker" class="form" action="verwerk-nieuwe-gebruiker.php" method="post" onsubmit="return validateForm();">
 
                 <label for="vnaamg">Voornaam</label>
                 <input type="text" name="vnaamg" id="vnaamg">

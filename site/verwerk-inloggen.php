@@ -26,16 +26,24 @@ if (!is_array($user) || is_bool($user) || !password_verify($password, $user['pas
 session_start();
 $_SESSION['SignedIn'] = true;
 $_SESSION['sname'] = $user['voornaam'];
-$_SESSION['user_id'] = $user['id'];
 
-$isAdmin = $user['rol'];
+$isrol = $user['rol'];
 
-if ($isAdmin === 'administrator') {
+if ($isrol === 'administrator') {
+    $_SESSION['manager'] = false;
     $_SESSION['admin'] = true;
     header("location: dashadmin.php");
     exit;
+} elseif ($isrol === 'manager') {
+    $_SESSION['admin'] = false;
+    $_SESSION['manager'] = true;
+    header("location: dashmanager.php");
+    exit;
+} else {
+    $_SESSION['admin'] = false;
+    $_SESSION['manager'] = false;
+    header("location: dash.php");
 }
 
-$_SESSION['admin'] = false;
-header("location: dash.php");
+
 exit;

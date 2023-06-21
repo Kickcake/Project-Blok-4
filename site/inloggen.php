@@ -25,6 +25,10 @@
 
                     <button class="formbutton" type="submit">log in</button>
                 </form>
+                <div class="register-button">
+                    <h3>Nog geen account?</h3>
+                    <a href="registreren.php"><button class="register-button">Registreren</button></a>
+                </div>
             </div>
         </div>
     </main>

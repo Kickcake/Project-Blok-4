@@ -4,8 +4,6 @@ require 'database.php';
 session_start();
 
 if (!empty($_POST['postcodea'])) {
-    $userId = $_SESSION['user_id'];
-
     $postcode = $_POST['postcodea'];
     $straat = $_POST['straata'];
     $huisnummer = $_POST['huisnummera'];
@@ -21,8 +19,11 @@ if (!empty($_POST['postcodea'])) {
 
     $last_id = mysqli_insert_id($conn);
 
-    $Gsql = "UPDATE Gebruiker SET adres_id = '$last_id' WHERE id = '$userId'";
-    mysqli_query($conn, $Gsql);
-
-    header("location: dashadmin.php");
+    if (isset($_SESSION['user_id'])) {
+        $userId = $_SESSION['user_id'];
+        $Gsql = "UPDATE Gebruiker SET adres_id = '$last_id' WHERE id = '$userId'";
+        mysqli_query($conn, $Gsql);
+    }
 }
+
+header("location: dash.php");
